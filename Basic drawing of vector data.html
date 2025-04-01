@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 绘图示例</title>
+</head>
+<body>
+    
+    <h2>Basic drawing of vector data</h2>
+    
+    <canvas id="myCanvas" width="400" height="200" style="border: 1px solid #000;"></canvas>
+    <br/>
+    <button onclick="drawLine()">绘制河流</button>
+    <button onclick="drawPolygon()">绘制湖泊</button>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        function clearCanvas() {
+            // 清除 Canvas 内容
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawLine() {
+            // 清除内容
+            clearCanvas();
+
+             // 定义河流的路径点
+        var points = [
+            { x: 19.4804793633251, y: 42.0664736997675 },
+            { x: 19.4893904953018, y: 42.0598819031164 },
+            { x: 19.494029167752, y: 42.0490786803276 },
+            { x: 19.494273308502, y: 42.0371157898759 },
+            { x: 19.4898787768017, y: 42.0269839541494 },
+            { x: 19.4821883476753, y: 42.0224673520742 },
+            { x: 19.4625350271978, y: 42.0207583677239 },
+            { x: 19.4566756518973, y: 42.0185000675856 },
+            { x: 19.4470320976706, y: 42.0098330745601 },
+            { x: 19.434580925719, y: 42.0047671566969 },
+            { x: 19.4082137382156, y: 42.0009219425834 },
+            { x: 19.3925887383134, y: 42.0060488956341 },
+            { x: 19.3822127609376, y: 42.0058047548841 },
+            { x: 19.3737899095614, y: 41.997565008171 },
+            { x: 19.3652449878102, y: 41.9699160826297 },
+            { x: 19.3592635421347, y: 41.9662539731793 },
+            { x: 19.3510848315083, y: 41.9653994814538 },
+            { x: 19.3458358080827, y: 41.9617984071908 },
+            { x: 19.3523055343587, y: 41.9387881532004 },
+            { x: 19.349864128658, y: 41.9316470398619 },
+            { x: 19.3462020192076, y: 41.9264590516237 },
+            { x: 19.3448592459822, y: 41.921454168948 },
+            { x: 19.3453475265828, y: 41.914740301922 },
+            { x: 19.3447371756072, y: 41.9105899109717 },
+            { x: 19.347056510933, y: 41.9066226255838 },
+            { x: 19.356455925309, y: 41.8999087585578 },
+            { x: 19.3645125664597, y: 41.8892276061439 },
+            { x: 19.3636580738349, y: 41.8631045593904 },
+            { x: 19.3651229174352, y: 41.8523623717891 }
+        ];
+
+        // 定义转换函数，将经纬度坐标映射到画布上的像素坐标
+        function convertCoordinates(point) {
+            var minX = Math.min(...points.map(p => p.x));
+            var maxX = Math.max(...points.map(p => p.x));
+            var minY = Math.min(...points.map(p => p.y));
+            var maxY = Math.max(...points.map(p => p.y));
+
+            var canvasWidth = canvas.width;
+            var canvasHeight = canvas.height;
+
+            var x = (point.x - minX) / (maxX - minX) * canvasWidth;
+            var y = (1 - (point.y - minY) / (maxY - minY)) * canvasHeight;
+
+            return { x: x, y: y };
+        }
+
+        // 将所有点转换为画布坐标
+        var convertedPoints = points.map(convertCoordinates);
+
+        // 绘制河流
+        ctx.beginPath();
+        ctx.moveTo(convertedPoints[0].x, convertedPoints[0].y);
+        for (var i = 1; i < convertedPoints.length; i++) {
+            ctx.lineTo(convertedPoints[i].x, convertedPoints[i].y);
+        }
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        }
+
+        function drawPolygon() {
+            // 清除内容
+            clearCanvas();
+
+            // 绘制面
+                // 定义湖泊的路径点
+        var points = [
+    { "x": 91.2190246153783, "y": 33.9421915878725 },
+    { "x": 91.2362121153783, "y": 33.9340372909975 },
+    { "x": 91.2434386778783, "y": 33.9206095566225 },
+    { "x": 91.2426574278783, "y": 33.9067423691225 },
+    { "x": 91.2395324278783, "y": 33.890751158185 },
+    { "x": 91.2323058653783, "y": 33.874149595685 },
+    { "x": 91.2195128966283, "y": 33.858524595685 },
+    { "x": 91.2049621153783, "y": 33.8483927597475 },
+    { "x": 91.1871398497533, "y": 33.8407755722475 },
+    { "x": 91.1674621153783, "y": 33.8361369003725 },
+    { "x": 91.1478332091283, "y": 33.8349161972475 },
+    { "x": 91.1340636778783, "y": 33.8521036972475 },
+    { "x": 91.1434386778783, "y": 33.8737345566225 },
+    { "x": 91.1634582091283, "y": 33.8928263534975 },
+    { "x": 91.1819152403783, "y": 33.9025431503725 },
+    { "x": 91.1819152403783, "y": 33.9099650253725 },
+    { "x": 91.1616027403783, "y": 33.910770689435 },
+    { "x": 91.1566222716283, "y": 33.9215861191225 },
+    { "x": 91.1643371153783, "y": 33.9352579941225 },
+    { "x": 91.1819152403783, "y": 33.9447794784975 },
+    { "x": 91.1986144591283, "y": 33.94568279881 },
+    { "x": 91.2190246153783, "y": 33.9421915878725 }
+        ];
+
+        // 定义转换函数，将经纬度坐标映射到画布上的像素坐标
+        function convertCoordinates(point) {
+            var minX = Math.min(...points.map(p => p.x));
+            var maxX = Math.max(...points.map(p => p.x));
+            var minY = Math.min(...points.map(p => p.y));
+            var maxY = Math.max(...points.map(p => p.y));
+
+            var canvasWidth = canvas.width;
+            var canvasHeight = canvas.height;
+
+            var x = (point.x - minX) / (maxX - minX) * canvasWidth;
+            var y = (1 - (point.y - minY) / (maxY - minY)) * canvasHeight;
+
+            return { x: x, y: y };
+        }
+
+        // 将所有点转换为画布坐标
+        var convertedPoints = points.map(convertCoordinates);
+            
+        ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.moveTo(convertedPoints[0].x, convertedPoints[0].y);
+        for (var i = 1; i < convertedPoints.length; i++) {
+            ctx.lineTo(convertedPoints[i].x, convertedPoints[i].y);
+        }
+            ctx.closePath();
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>
