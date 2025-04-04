@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DONGYAN LI</title>
     <style>
-        body {
+        body 
+        {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e0e0e0;
         }
-        header {
+        header 
+        {
             background-color: #e0e0e0;
             color: #333;
             padding: 20px;
             position: relative;
             height: 60px;
         }
-        header h1 {
+        header h1 
+        {
             position: absolute;
             left: 100px;
             top: 50%;
@@ -26,7 +29,8 @@
             margin: 0;
             cursor: pointer;
         }
-        header img {
+        header img 
+        {
             position: absolute;
             left: 20px;
             top: 50%;
@@ -37,7 +41,8 @@
             border: 2px solid #333;
             cursor: pointer;
         }
-        nav {
+        nav 
+        {
             position: absolute;
             top: 50%;
             right: 20px;
@@ -45,7 +50,8 @@
             margin: 0;
             z-index: 1000;
         }
-        nav a {
+        nav a 
+        {
             margin: 0 10px;
             padding: 8px 15px;
             text-decoration: none;
@@ -54,20 +60,24 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        nav a:hover {
+        nav a:hover 
+        {
             background-color: rgba(0, 0, 0, 0.1);
         }
-        .container {
+        .container 
+        {
             width: 80%;
             margin: 20px auto;
             padding: 20px;
             background-color: transparent;
             display: none;
         }
-        .container.active {
+        .container.active 
+        {
             display: block;
         }
-        #welcome {
+        #welcome 
+        {
             width: 80%;
             margin: 100px auto;
             text-align: center;
@@ -75,19 +85,18 @@
             font-style: italic;
             color: #555;
         }
-        
-        /* About页面样式 */
-        #about .about-content {
+        #about .about-content 
+        {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* Projects页面样式 */
-        #gallery .content-container {
+        #gallery .content-container 
+        {
             display: flex;
         }
-        #gallery .sidebar {
+        #gallery .sidebar 
+        {
             width: 220px;
             padding: 15px;
             background-color: rgba(0,0,0,0.05);
@@ -95,66 +104,76 @@
             margin-right: 20px;
             display: none;
         }
-        #gallery.active .sidebar {
+        #gallery.active .sidebar 
+        {
             display: block;
         }
-        .sidebar h3 {
+        .sidebar h3 
+        {
             margin-top: 0;
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
         }
-        .sidebar ul {
+        .sidebar ul 
+        {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .sidebar li {
+        .sidebar li 
+        {
             margin-bottom: 5px;
             cursor: pointer;
             padding: 5px;
             border-radius: 4px;
             transition: background-color 0.2s;
         }
-        .sidebar li:hover {
+        .sidebar li:hover 
+        {
             background-color: rgba(0,0,0,0.1);
         }
-        .sidebar li.active {
+        .sidebar li.active 
+        {
             background-color: rgba(0,0,0,0.15);
             font-weight: bold;
         }
-        .sidebar .category {
+        .sidebar .category 
+        {
             font-weight: bold;
             margin-top: 15px;
             color: #555;
         }
-        .sidebar .sub-item {
+        .sidebar .sub-item 
+        {
             padding-left: 20px;
             font-size: 0.9em;
         }
-        .sidebar .sub-item:before {
+        .sidebar .sub-item:before 
+        {
             content: "• ";
             color: #777;
         }
-        .project-content {
+        .project-content 
+        {
             flex: 1;
         }
-        .project-section {
+        .project-section 
+        {
             display: none;
         }
-        .project-section.active {
+        .project-section.active 
+        {
             display: block;
             animation: fadeIn 0.5s;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .gallery-grid {
+        .gallery-grid 
+        {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
         }
-        .gallery-grid img, .gallery-grid video {
+        .gallery-grid img, .gallery-grid video 
+        {
             max-width: 100%;
             height: auto;
             border: 1px solid #ddd;
@@ -162,20 +181,97 @@
             padding: 5px;
             background-color: transparent;
         }
-        figure {
+        figure 
+        {
             margin: 10px;
         }
-        figcaption {
+        figcaption 
+        {
             text-align: center;
             font-style: italic;
         }
-        footer {
+        footer 
+        {
             text-align: center;
             padding: 20px;
             background-color: #e0e0e0;
             color: #333;
             margin-top: 20px;
             border-top: 1px solid #ccc;
+        }
+        #media .content-container 
+        {
+            display: flex;
+        }
+        #media .sidebar 
+        {
+            width: 220px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            margin-right: 20px;
+            display: none;
+        }
+        #media.active .sidebar 
+        {
+            display: block;
+        }
+        .media-content-container 
+        {
+            flex: 1;
+        }
+        .media-category 
+        {
+            display: none;
+        }
+        .media-category.active 
+        {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        .media-grid 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .media-card 
+        {
+            width: calc(33.33% - 20px);
+            min-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: transform 0.3s;
+        }
+        .media-card:hover 
+        {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .media-card img 
+        {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .media-card-content 
+        {
+            padding: 15px;
+        }
+        .media-card-content h3 
+        {
+            margin-top: 0;
+        }
+        .media-tag 
+        {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -187,20 +283,23 @@
     <nav>
         <a href="#" class="nav-link" data-target="about">About</a>
         <a href="#" class="nav-link" data-target="gallery">Project</a>
+        <a href="#" class="nav-link" data-target="media">Media</a>
         <a href="#" class="nav-link" data-target="contact">Contact</a>
     </nav>
 </header>
 
 <div id="welcome">
     <p>HEY!!!!!</p>
+    <p style="text-align: center; font-style: italic; color: #666;">
+        Use the menu buttons above to explore.
+    </p>
 </div>
 
 <div class="container" id="about">
     <h2>About</h2>
     <div class="about-content">
-       <p style="font-size: 24px;">Of course, you want to check the <em>About </em> first!</p>
-        <p>I'm Dongyan(Sally), currently based in Beijing.</p>
-        <p>我是东妍，现居北京。</p>
+       <p>I'm Dongyan(Sally), currently based in Beijing.</p>
+       <p>我是东妍，现居北京。</p>
     </div>
 </div>
 
@@ -214,6 +313,8 @@
                 <ul>
                     <li class="project-link sub-item active" data-target="jinshan">Beijing Jinshan Map</li>
                     <li class="project-link sub-item" data-target="zhangjiakou">Zhangjiakou 3D map</li>
+                    <li class="project-link sub-item" data-target="Campus digital map">Campus digital map</li>
+                </ul>
                 </ul>
                 
                 <li class="category">Data analysis</li>
@@ -230,7 +331,7 @@
         
         <div class="project-content">
             <div class="project-section active" id="jinshan">
-                <h3>北京金山地图</h3>
+                <h3>Beijing Jinshan Map</h3>
                 <div class="gallery-grid">
                     <figure>
                         <img src="Beijing Jinshan Map.jpg" alt="Beijing Jinshan Map" style="width: 100%; max-width: 500px;">
@@ -240,36 +341,101 @@
             </div>
             
             <div class="project-section" id="zhangjiakou">
-                <h3>张家口3D地图演示</h3>
+                <h3>Zhangjiakou 3D map demonstration</h3>
                 <div class="gallery-grid">
                     <video controls width="100%" style="max-width: 600px;">
                         <source src="Zhangjiakou 3D map demonstration by arcmap.mp4" type="video/mp4">
-                        您的浏览器不支持视频标签。
+                        Your browser does not support video tags.
                     </video>
                 </div>
             </div>
             
+            <div class="project-section" id="Campus digital map">
+                <h3>Campus digital map</h3>
+                <div class="gallery-grid">
+                    <figure>
+                        <a href="https://maptable.com/s/m/dwwewi7ozpj4?loc=39.93,116.30,15.44z" target="_blank">
+                            <img src="Campus digital map.jpg" alt="Campus digital map" style="width: 100%; max-width: 500px;">
+                        </a>
+                        <figcaption>[Click to view the full project]</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
             <div class="project-section" id="vector">
-                <h3>矢量数据绘制</h3>
+                <h3>HTML vector data rendering</h3>
                 <div class="gallery-grid">
                     <figure>
                         <a href="Basic drawing of vector data.html" target="_blank">
-                            <img src="Basic drawing of vector data.jpg" alt="矢量数据绘制" style="width: 100%; max-width: 500px;">
+                            <img src="Basic drawing of vector data.jpg" alt="Basic drawing of vector data" style="width: 100%; max-width: 500px;">
                         </a>
-                        <figcaption>[点击查看完整项目]</figcaption>
+                        <figcaption>[Click to view the full project]</figcaption>
                     </figure>
                 </div>
             </div>
             
             <div class="project-section" id="demographics">
-                <h3>不同海拔人口统计</h3>
+                <h3>HTML implements population statistics at different altitudes</h3>
                 <div class="gallery-grid">
                     <figure>
                         <a href="Demographics at different altitudes.html" target="_blank">
-                            <img src="Demographics at different altitudes.jpg" alt="不同海拔人口统计" style="width: 100%; max-width: 500px;">
+                            <img src="Demographics at different altitudes.jpg" alt="Demographics at different altitudes" style="width: 100%; max-width: 500px;">
                         </a>
-                        <figcaption>[点击查看完整项目]</figcaption>
+                        <figcaption>[Click to view the full project]</figcaption>
                     </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="media">
+    <h2>Media</h2>
+    <div class="content-container">
+        <div class="sidebar">
+            <h3>Media classification</h3>
+            <ul>
+                <li class="category">Wechat public account</li>
+                <ul>
+                    <li class="media-link sub-item active" data-target="tutorials">推送</li>
+                </ul>
+            </ul>
+        </div>
+        
+        <div class="media-content-container">
+            <div class="media-category active" id="tutorials">
+                <h3>推送</h3>
+                <div class="media-grid">
+                    <div class="media-card">
+                        <img src="cover_huolifriends.jpg" alt="huolifriends">
+                        <div class="media-card-content">
+                            <div>
+                                <span class="media-tag">秀米排版</span>
+                            </div>
+                            <a href="https://mp.weixin.qq.com/s/3zjMAwQfgd_W8SAeBOyUvg" target="_blank">Click to view →</a>
+                        </div>
+                    </div>
+                    <div class="media-card">
+                        <img src="cover_huolicamera.jpg" alt="huolicamera">
+                        <div class="media-card-content">
+                            <div>
+                                <span class="media-tag">策划</span>
+                                <span class="media-tag">摄影</span>
+                                <span class="media-tag">文案</span>
+                                <span class="media-tag">电子地图</span>
+                            </div>
+                            <a href="https://mp.weixin.qq.com/s/NfST67klvNMOOqbqVaPs7A" target="_blank">Click to view →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <img src="cover_huoli38.jpg" alt="huoli38">
+                    <div class="media-card-content">
+                        <div>
+                            <span class="media-tag">参演</span>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/K_S-W2zCjP7dDOhUPgkPBA" target="_blank">Click to view →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -287,7 +453,8 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() 
+    {
         const navLinks = document.querySelectorAll('.nav-link');
         const containers = document.querySelectorAll('.container');
         const welcome = document.getElementById('welcome');
@@ -295,67 +462,72 @@
         const headerName = document.getElementById('header-name');
         const projectLinks = document.querySelectorAll('.project-link');
         const projectSections = document.querySelectorAll('.project-section');
-        
-        // 默认显示欢迎页面
+        const mediaLinks = document.querySelectorAll('.media-link');
+        const mediaCategories = document.querySelectorAll('.media-category');
+
         welcome.style.display = 'block';
-        
-        // 导航链接点击事件
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+
+        mediaLinks.forEach(link => 
+        {
+            link.addEventListener('click', function() 
+            {
+                const targetId = this.getAttribute('data-target');
+                mediaLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                mediaCategories.forEach(category => 
+                {
+                    category.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+        navLinks.forEach(link => 
+        {
+            link.addEventListener('click', function(e) 
+            {
                 e.preventDefault();
                 const targetId = this.getAttribute('data-target');
                 showContent(targetId);
             });
         });
-        
-        // 头像点击事件 - 返回欢迎页面
-        headerImage.addEventListener('click', function() {
+        headerImage.addEventListener('click', function() 
+        {
             returnToWelcome();
         });
-        
-        // 名字点击事件 - 返回欢迎页面
-        headerName.addEventListener('click', function() {
+        headerName.addEventListener('click', function() 
+        {
             returnToWelcome();
         });
-        
-        // 项目链接点击事件
-        projectLinks.forEach(link => {
-            link.addEventListener('click', function() {
+        projectLinks.forEach(link => 
+        {
+            link.addEventListener('click', function() 
+            {
                 const targetId = this.getAttribute('data-target');
-                
-                // 更新活动状态
                 projectLinks.forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
-                
-                // 显示对应项目
-                projectSections.forEach(section => {
+                projectSections.forEach(section => 
+                {
                     section.classList.remove('active');
                 });
                 document.getElementById(targetId).classList.add('active');
             });
         });
         
-        // 显示内容页面的函数
-        function showContent(targetId) {
-            // 隐藏欢迎页面
+        function showContent(targetId) 
+        {
             welcome.style.display = 'none';
-            
-            // 隐藏所有内容容器
-            containers.forEach(container => {
+            containers.forEach(container => 
+            {
                 container.classList.remove('active');
             });
-            
-            // 显示目标容器
             document.getElementById(targetId).classList.add('active');
         }
-        
-        // 返回欢迎页面的函数
-        function returnToWelcome() {
-            // 显示欢迎页面
+
+        function returnToWelcome() 
+        {
             welcome.style.display = 'block';
-            
-            // 隐藏所有内容容器
-            containers.forEach(container => {
+            containers.forEach(container => 
+            {
                 container.classList.remove('active');
             });
         }
