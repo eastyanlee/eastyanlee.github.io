@@ -90,6 +90,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            line-height: 1.6;
         }
         #gallery .content-container 
         {
@@ -97,7 +98,7 @@
         }
         #gallery .sidebar 
         {
-            width: 220px;
+            width: 250px;
             padding: 15px;
             background-color: rgba(0,0,0,0.05);
             border-radius: 8px;
@@ -238,7 +239,7 @@
         .media-card 
         {
             width: calc(33.33% - 20px);
-            min-width: 300px;
+            min-width: 250px;
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
@@ -253,7 +254,7 @@
         .media-card img 
         {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         .media-card-content 
@@ -263,6 +264,7 @@
         .media-card-content h3 
         {
             margin-top: 0;
+            font-size: 1.1em;
         }
         .media-tag 
         {
@@ -272,6 +274,11 @@
             border-radius: 4px;
             font-size: 0.8em;
             margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -296,10 +303,13 @@
 </div>
 
 <div class="container" id="about">
-    <h2>About</h2>
+    <h2>About Me</h2>
     <div class="about-content">
-       <p>I'm Dongyan(Sally), currently based in Beijing.</p>
-       <p>我是东妍，现居北京。</p>
+       <p><b>Dongyan (Sally) Li</b>，现居北京。</p>
+       <p>我是一名热衷于地理信息科学与数字媒介表达的创作者。在GIS领域，我具备扎实的空间数据分析、地图制图及三维建模能力，能够熟练运用 ArcMap、HTML5 等技术实现地理信息的可视化展示。</p>
+       <p>除了技术领域，我也活跃于数字媒体策划与内容创作。擅长文案撰写、摄影剪辑及新媒体排版，致力于将复杂的数据与技术通过富有感染力的媒介形式呈现给观众。我具有优秀的跨学科协作能力与项目执行力，期待在地图学、遥感分析或数字创意领域持续探索。</p>
+       <hr>
+       <p>I'm Dongyan (Sally), a creator based in Beijing with a passion for GIS and digital media. I specialize in spatial data analysis, cartography, and 3D modeling, utilizing tools like ArcMap and HTML5 for visualization. Beyond technology, I excel in content strategy, photography, and copywriting, aiming to bridge the gap between complex data and engaging storytelling.</p>
     </div>
 </div>
 
@@ -311,27 +321,41 @@
             <ul>
                 <li class="category">Map item</li>
                 <ul>
+                    <li class="project-link sub-item" data-target="landscape-stamp">Landscape Stamp Digital Platform</li>
                     <li class="project-link sub-item active" data-target="jinshan">Beijing Jinshan Map</li>
                     <li class="project-link sub-item" data-target="zhangjiakou">Zhangjiakou 3D map</li>
                     <li class="project-link sub-item" data-target="Campus digital map">Campus digital map</li>
                 </ul>
-                </ul>
                 
                 <li class="category">Data analysis</li>
                 <ul>
+                    <li class="project-link sub-item" data-target="remote-sensing">Remote Sensing Recognition</li>
                     <li class="project-link sub-item" data-target="demographics">Elevation demography</li>
-                    <li class="project-link sub-item" data-target="Buffer">Buffer analysis and overlay analysis based on vector data</li>
+                    <li class="project-link sub-item" data-target="Buffer">Buffer analysis</li>
                 </ul>
                 
                 <li class="category">Technical realization</li>
                 <ul>
                     <li class="project-link sub-item" data-target="vector">Vector data rendering</li>
-                    <li class="project-link sub-item" data-target="river runoff">Visualization of river runoff using excel</li>
+                    <li class="project-link sub-item" data-target="river runoff">River runoff visualization</li>
                 </ul>
             </ul>
         </div>
         
         <div class="project-content">
+            <!-- 风景戳数字平台 -->
+            <div class="project-section" id="landscape-stamp">
+                <h3>风景戳数字平台 | Landscape Stamp Digital Platform</h3>
+                <div class="gallery-grid">
+                    <figure>
+                        <a href="YOUR_LINK_HERE" target="_blank">
+                            <img src="YOUR_IMAGE_HERE.jpg" alt="Landscape Stamp Digital Platform" style="width: 100%; max-width: 500px;">
+                        </a>
+                        <figcaption>[点击访问平台 / Click to view the platform]</figcaption>
+                    </figure>
+                </div>
+            </div>
+
             <div class="project-section active" id="jinshan">
                 <h3>Beijing Jinshan Map</h3>
                 <div class="gallery-grid">
@@ -360,6 +384,17 @@
                             <img src="Campus digital map.jpg" alt="Campus digital map" style="width: 100%; max-width: 500px;">
                         </a>
                         <figcaption>[Click to view the full project]</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- 遥感影像识别项目 -->
+            <div class="project-section" id="remote-sensing">
+                <h3>遥感影像识别项目 | Remote Sensing Image Recognition</h3>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="YOUR_RS_IMAGE.jpg" alt="Remote Sensing Image Recognition" style="width: 100%; max-width: 500px;">
+                        <figcaption>基于遥感影像的特征提取与分类识别项目展示</figcaption>
                     </figure>
                 </div>
             </div>
@@ -417,23 +452,26 @@
         <div class="sidebar">
             <h3>Media classification</h3>
             <ul>
-                <li class="category">Wechat public account</li>
+                <li class="category">Wechat Public Account</li>
                 <ul>
-                    <li class="media-link sub-item active" data-target="tutorials">推送</li>
+                    <li class="media-link sub-item active" data-target="tutorials">推送内容</li>
+                </ul>
+                <li class="category">Social Media</li>
+                <ul>
+                    <li class="media-link sub-item" data-target="social-accounts">社交账号</li>
                 </ul>
             </ul>
         </div>
         
         <div class="media-content-container">
+            <!-- 微信推送部分 -->
             <div class="media-category active" id="tutorials">
                 <h3>推送</h3>
                 <div class="media-grid">
                     <div class="media-card">
                         <img src="cover_huolifriends.jpg" alt="huolifriends">
                         <div class="media-card-content">
-                            <div>
-                                <span class="media-tag">秀米排版</span>
-                            </div>
+                            <div><span class="media-tag">秀米排版</span></div>
                             <a href="https://mp.weixin.qq.com/s/3zjMAwQfgd_W8SAeBOyUvg" target="_blank">Click to view →</a>
                         </div>
                     </div>
@@ -449,24 +487,49 @@
                             <a href="https://mp.weixin.qq.com/s/NfST67klvNMOOqbqVaPs7A" target="_blank">Click to view →</a>
                         </div>
                     </div>
-                </div>
-                <div class="media-grid">
                     <div class="media-card">
                         <img src="cover_huoli38.jpg" alt="huoli38">
                         <div class="media-card-content">
-                            <div>
-                                <span class="media-tag">参演</span>
-                            </div>
+                            <div><span class="media-tag">参演</span></div>
                             <a href="https://mp.weixin.qq.com/s/K_S-W2zCjP7dDOhUPgkPBA" target="_blank">Click to view →</a>
                         </div>
                     </div>
                     <div class="media-card">
                         <img src="yundonghui.jpg" alt="yundonghui">
                         <div class="media-card-content">
-                            <div>
-                                <span class="media-tag">文案</span>
-                            </div>
+                            <div><span class="media-tag">文案</span></div>
                             <a href="https://mp.weixin.qq.com/s/tKaY-JeuQqyYa9ctAw7Akw" target="_blank">Click to view →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 社交账号部分 -->
+            <div class="media-category" id="social-accounts">
+                <h3>社交平台社交账号 | Social Media Accounts</h3>
+                <div class="media-grid">
+                    <!-- 平台1 -->
+                    <div class="media-card">
+                        <div class="media-card-content">
+                            <h3>小红书 / Red</h3>
+                            <p>ID: Your_ID</p>
+                            <a href="YOUR_LINK_HERE" target="_blank">Follow me →</a>
+                        </div>
+                    </div>
+                    <!-- 平台2 -->
+                    <div class="media-card">
+                        <div class="media-card-content">
+                            <h3>Bilibili</h3>
+                            <p>ID: Your_ID</p>
+                            <a href="YOUR_LINK_HERE" target="_blank">Follow me →</a>
+                        </div>
+                    </div>
+                    <!-- 平台3 -->
+                    <div class="media-card">
+                        <div class="media-card-content">
+                            <h3>知乎 / Zhihu (或其他)</h3>
+                            <p>ID: Your_ID</p>
+                            <a href="YOUR_LINK_HERE" target="_blank">Follow me →</a>
                         </div>
                     </div>
                 </div>
@@ -477,8 +540,9 @@
 
 <div class="container" id="contact">
     <h2>Contact</h2>
-    <p>WeChat eastyanlee</p>
-    <p>Email <a href="mailto:dyannlee@163.com">dyannlee@163.com</a></p>
+    <p>Phone: 13718424891</p>
+    <p>WeChat: eastyanlee</p>
+    <p>Email: <a href="mailto:dyannlee@163.com">dyannlee@163.com</a></p>
 </div>
 
 <footer>
