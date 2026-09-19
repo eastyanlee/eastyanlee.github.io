@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dongyan Li's personal portfolio showcasing projects in GIS, AI, and digital media. Explore my work in spatial data analysis, cartography, and content creation.">
-    <title>DONGYAN LI</title>
+    <meta name="description" content="Dongyan Li — AI product engineering, overseas products, AI-assisted coding, and selected GIS and media work.">
+    <link rel="canonical" href="https://eastyanlee.github.io/">
+    <meta property="og:title" content="Dongyan Li | AI Product Engineering">
+    <meta property="og:description" content="AI product engineering, overseas products, AI-assisted coding, and selected work.">
+    <meta property="og:image" content="https://eastyanlee.github.io/ME.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Dongyan Li | AI Product Engineering</title>
     <style>
         body 
         {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0e0e0;
+            background-color: #f7f6f2;
         }
         header 
         {
-            background-color: #e0e0e0;
+            background-color: #f7f6f2;
             color: #333;
             padding: 20px;
             position: relative;
@@ -80,11 +85,62 @@
         #welcome 
         {
             width: 80%;
-            margin: 100px auto;
-            text-align: center;
-            font-size: 24px;
-            font-style: italic;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 16px;
+            font-style: normal;
             color: #555;
+            line-height: 1.6;
+        }
+        #welcome .welcome-avatar {
+            display: block;
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 34px;
+            margin-bottom: 28px;
+        }
+        #welcome .welcome-name {
+            margin: 0 0 42px;
+            color: #222;
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+        }
+        #welcome .welcome-lead {
+            max-width: 1220px;
+            margin: 0 0 20px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #welcome .welcome-detail {
+            max-width: 1220px;
+            margin: 0 0 42px;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #welcome .welcome-current {
+            border-top: 1px solid #c9c9c0;
+            padding-top: 36px;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #welcome .welcome-current strong {
+            display: block;
+            margin-bottom: 34px;
+            color: #222;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        #welcome .welcome-links {
+            margin-top: 34px;
+            font-size: 16px;
+            font-style: normal;
         }
         #about .about-content 
         {
@@ -200,7 +256,7 @@
         {
             text-align: center;
             padding: 20px;
-            background-color: #e0e0e0;
+            background-color: #f7f6f2;
             color: #333;
             margin-top: 20px;
             border-top: 1px solid #ccc;
@@ -285,6 +341,22 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @media (max-width: 640px) {
+            header { height: 86px; padding: 12px; }
+            header img { left: 14px; width: 48px; height: 48px; }
+            header h1 { left: 74px; font-size: 20px; }
+            nav { right: 8px; }
+            nav a { margin: 0 2px; padding: 6px 5px; font-size: 13px; }
+            #welcome { width: calc(100% - 32px); margin: 42px auto 64px; font-size: 18px; }
+            #welcome .welcome-avatar { width: 92px; height: 92px; border-radius: 24px; margin-bottom: 28px; }
+            #welcome .welcome-name { margin-bottom: 38px; }
+            #welcome .welcome-detail { margin-bottom: 30px; }
+            #welcome .welcome-current { padding-top: 34px; }
+            .container { width: calc(100% - 32px); padding: 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -301,20 +373,24 @@
 </header>
 
 <div id="welcome">
-    <p>HEY!!!!!</p>
-    <p style="text-align: center; font-style: italic; color: #666;">
-        Use the menu buttons above to explore.
-    </p>
+    <img class="welcome-avatar" src="ME.jpg" alt="Portrait of Dongyan Li">
+    <p class="welcome-name">Hi, I’m Dongyan Li.</p>
+    <p class="welcome-lead">An AI product engineering candidate working across overseas products, front-end implementation, and AI-assisted coding.</p>
+    <p class="welcome-detail">I am a Geographic Information Science undergraduate at Capital Normal University, an SEO Content Operations Intern at Meshy AI, and the independent builder of SoBooks.</p>
+    <div class="welcome-current">
+        <strong>Currently</strong>
+        Building content products, data workflows, and practical product experiences that turn user problems into shipped work.
+        <div class="welcome-links"><a href="#" class="nav-link" data-target="gallery">View projects</a> · <a href="https://www.sobooks.com" target="_blank" rel="noopener noreferrer">SoBooks</a> · <a href="https://github.com/EASTYANLEE" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#" class="nav-link" data-target="contact">Contact</a></div>
+    </div>
 </div>
 
 <div class="container" id="about">
     <h2>About Me</h2>
     <div class="about-content">
-       <p><b>李东妍 (Dongyan Li)</b>，首都师范大学地理信息科学专业本科生（2023.9–2027.6）。</p>
-       <p>具备扎实的GIS与遥感数据处理基础，熟悉Python、SQL及Linux开发环境。有Django+Vue3+PostgreSQL全栈项目开发经验，习惯借助AI工具（Claude/Gemini/Cursor）辅助编码与调试。曾独立完成基于U-Net的遥感影像语义分割、三维点云处理软件及数字化地图平台开发，对数据解析、清洗与可视化有实操积累。善于将复杂技术内容转化为清晰文档与教程，具备技术写作与多语言内容管理能力。积极关注LLM在地理数据处理中的应用，期望在工程实践中持续成长。</p>
+       <p><b>Dongyan Li</b> is a Geographic Information Science undergraduate at Capital Normal University (2023.09–2027.06), based in Beijing. I am seeking internships in AI product engineering, overseas products, and AI-assisted coding.</p>
+       <p>My work combines product thinking, front-end implementation, content operations, and data workflows. I use AI coding tools to move from a user problem and evidence to a working prototype, a shipped page, and measurable iteration. IELTS 6.5.</p>
        <hr>
-       <p><b>Dongyan Li</b> is an undergraduate student in Geographic Information Science at Capital Normal University (2023.9–2027.6).</p>
-       <p>She has a solid foundation in GIS and remote sensing data processing, with proficiency in Python, SQL, and Linux environments. Experienced in full-stack development using Django, Vue3, PostgreSQL, and Docker, she regularly leverages AI-assisted coding tools including Claude, Gemini, and Cursor to accelerate development and debugging. She has independently completed projects including U-Net-based remote sensing semantic segmentation, 3D point cloud processing software, and a digital map platform, gaining hands-on experience in data parsing, cleaning, and visualization. Skilled at transforming complex technical concepts into clear documentation and tutorials, with proven abilities in technical writing and multilingual content management (supporting 24 languages via i18n). Passionate about applying LLMs to geospatial data challenges and eager to learn engineering best practices in a production environment.</p>
+       <p><b>Current focus:</b> Meshy AI · AI 3D content and landing pages · technical SEO · GSC data diagnosis · workflow automation.</p>
     </div>
 </div>
 
@@ -324,39 +400,45 @@
         <div class="sidebar">
             <h3>Project directory</h3>
             <ul>
-                <li class="category">Map item</li>
-                <ul>
-                    <li class="project-link sub-item active" data-target="landscape-stamp">Landscape Stamp Digital Platform</li>
+                <li class="category">Featured work</li>
+                    <li class="project-link sub-item active" data-target="meshy-ai">Meshy AI</li>
+                    <li class="project-link sub-item" data-target="sobooks">SoBooks</li>
+                <li class="category">Selected academic work</li>
                     <li class="project-link sub-item" data-target="jinshan">Beijing Jinshan Map</li>
                     <li class="project-link sub-item" data-target="zhangjiakou">Zhangjiakou 3D map</li>
-                    <li class="project-link sub-item" data-target="Campus digital map">Campus digital map</li>
-                </ul>
-                
-                <li class="category">Data analysis</li>
-                <ul>
+                    <li class="project-link sub-item" data-target="campus-digital-map">Campus digital map</li>
                     <li class="project-link sub-item" data-target="remote-sensing">Remote Sensing Image Semantic Segmentation(Unet model)</li>
                     <li class="project-link sub-item" data-target="demographics">Elevation demography</li>
-                    <li class="project-link sub-item" data-target="Buffer">Buffer analysis</li>
-                </ul>
-                
-                <li class="category">Technical realization</li>
-                <ul>
+                    <li class="project-link sub-item" data-target="buffer">Buffer analysis</li>
                     <li class="project-link sub-item" data-target="vector">Vector data rendering</li>
-                    <li class="project-link sub-item" data-target="river runoff">River runoff visualization</li>
-                </ul>
+                    <li class="project-link sub-item" data-target="river-runoff">River runoff visualization</li>
             </ul>
         </div>
         
         <div class="project-content">
-            <!-- 风景戳数字平台 -->
-            <div class="project-section active" id="landscape-stamp">
-                <h3>Landscape Stamp Digital Platform</h3>
+            <div class="project-section active" id="meshy-ai">
+                <h3>Meshy AI · SEO Content Operations Intern (Front-end Background)</h3>
+                <p>2026.05–Present · I help ship content products, feature pages, and growth workflows for an overseas AI 3D product.</p>
+                <p>I expanded Tutorials into a video + Guides experience and published <b>60+ English long-form articles</b>. Guides reached 300+ organic clicks in the latest 28-day window. I also maintain the Docs site through Git and Vercel, build GSC-to-SQLite-to-Streamlit diagnostics, and automate weekly new-keyword opportunity reports.</p>
+                <p>My product work includes 3D Tools that connect browser-side processing, backend jobs, and the main workspace, plus an SEO / GEO / PR competitor-monitoring workflow that turns multi-source data into prioritized actions.</p>
                 <div class="gallery-grid">
                     <figure>
-                        <a href="http://47.254.124.187/" target="_blank">
-                            <img src="fengjingchuo.jpg" alt="Landscape Stamp Digital Platform" style="width: 100%; max-width: 500px;">
+                        <a href="https://www.meshy.ai/tutorials" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/meshy-tutorials.png" alt="Meshy Tutorials and Guides page" style="width: 100%; max-width: 700px;">
                         </a>
-                        <figcaption>[Click to view the platform]</figcaption>
+                        <figcaption><a href="https://www.meshy.ai/tutorials" target="_blank" rel="noopener noreferrer">Tutorials / Guides ↗</a> · <a href="https://www.meshy.ai/features/ai-auto-rigging" target="_blank" rel="noopener noreferrer">Auto-Rigging ↗</a> · <a href="https://www.meshy.ai/features/ai-animation-generator" target="_blank" rel="noopener noreferrer">Animation ↗</a> · <a href="https://www.meshy.ai/features/ai-retopology" target="_blank" rel="noopener noreferrer">Retopology ↗</a> · <a href="https://www.meshy.ai/3d-tools" target="_blank" rel="noopener noreferrer">3D Tools ↗</a> · <a href="https://docs.meshy.ai/" target="_blank" rel="noopener noreferrer">Docs ↗</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-section" id="sobooks">
+                <h3>SoBooks · Personal Full-stack AI Product</h3>
+                <p>Scenery postmark search and registration platform. I independently handled the product definition, design, data processing, front end, back end, deployment, analytics, and iteration with Codex-assisted development.</p>
+                <p><b>Data foundation:</b> 12,503 raw records · 12,020 cleaned postmarks · 7,430 post offices · 12,013 images. <b>Usage:</b> PostHog last 30 days — 455 active users, 474 sessions, 1,305 PV; GSC last 28 days — 1,051 impressions, 31 organic clicks.</p>
+                <div class="gallery-grid">
+                    <figure>
+                        <a href="https://www.sobooks.com" target="_blank" rel="noopener noreferrer"><img src="assets/sobooks-homepage.png" alt="SoBooks scenery postmark platform homepage" style="width: 100%; max-width: 700px;"></a>
+                        <figcaption><a href="https://www.sobooks.com" target="_blank" rel="noopener noreferrer">Visit product ↗</a> · <a href="https://github.com/eastyanlee/sobooks" target="_blank" rel="noopener noreferrer">View GitHub showcase ↗</a></figcaption>
                     </figure>
                 </div>
             </div>
@@ -381,11 +463,11 @@
                 </div>
             </div>
             
-            <div class="project-section" id="Campus digital map">
+            <div class="project-section" id="campus-digital-map">
                 <h3>Campus digital map</h3>
                 <div class="gallery-grid">
                     <figure>
-                        <a href="https://maptable.com/s/m/dwwewi7ozpj4?loc=39.93,116.30,15.44z" target="_blank">
+                        <a href="https://maptable.com/s/m/dwwewi7ozpj4?loc=39.93,116.30,15.44z" target="_blank" rel="noopener noreferrer">
                             <img src="Campus digital map.jpg" alt="Campus digital map" style="width: 100%; max-width: 500px;">
                         </a>
                         <figcaption>[Click to view the full project]</figcaption>
@@ -408,7 +490,7 @@
                 <h3>HTML vector data rendering</h3>
                 <div class="gallery-grid">
                     <figure>
-                        <a href="Basic drawing of vector data.html" target="_blank">
+                        <a href="Basic drawing of vector data.html" target="_blank" rel="noopener noreferrer">
                             <img src="Basic drawing of vector data.jpg" alt="Basic drawing of vector data" style="width: 100%; max-width: 500px;">
                         </a>
                         <figcaption>[Click to view the full project]</figcaption>
@@ -416,7 +498,7 @@
                 </div>
             </div>
                 
-            <div class="project-section" id="Buffer">
+            <div class="project-section" id="buffer">
                 <h3>Urban housing selection analysis</h3>
                 <div class="gallery-grid">
                     <figure>
@@ -426,7 +508,7 @@
                 </div>
             </div>
             
-            <div class="project-section" id="river runoff">
+            <div class="project-section" id="river-runoff">
                 <h3>Visualization of river runoff using excel</h3>
                 <div class="gallery-grid">
                     <figure>
@@ -440,7 +522,7 @@
                 <h3>HTML implements population statistics at different altitudes</h3>
                 <div class="gallery-grid">
                     <figure>
-                        <a href="Demographics at different altitudes.html" target="_blank">
+                        <a href="Demographics at different altitudes.html" target="_blank" rel="noopener noreferrer">
                             <img src="Demographics at different altitudes.jpg" alt="Demographics at different altitudes" style="width: 100%; max-width: 500px;">
                         </a>
                         <figcaption>[Click to view the full project]</figcaption>
@@ -481,7 +563,7 @@
                         <img src="cover_huolifriends.jpg" alt="huolifriends">
                         <div class="media-card-content">
                             <div><span class="media-tag">秀米排版</span></div>
-                            <a href="https://mp.weixin.qq.com/s/3zjMAwQfgd_W8SAeBOyUvg" target="_blank">Click to view →</a>
+                            <a href="https://mp.weixin.qq.com/s/3zjMAwQfgd_W8SAeBOyUvg" target="_blank" rel="noopener noreferrer">Click to view →</a>
                         </div>
                     </div>
                     <div class="media-card">
@@ -493,28 +575,28 @@
                                 <span class="media-tag">文案</span>
                                 <span class="media-tag">电子地图</span>
                             </div>
-                            <a href="https://mp.weixin.qq.com/s/NfST67klvNMOOqbqVaPs7A" target="_blank">Click to view →</a>
+                            <a href="https://mp.weixin.qq.com/s/NfST67klvNMOOqbqVaPs7A" target="_blank" rel="noopener noreferrer">Click to view →</a>
                         </div>
                     </div>
                     <div class="media-card">
                         <img src="cover_huoli38.jpg" alt="huoli38">
                         <div class="media-card-content">
                             <div><span class="media-tag">参演</span></div>
-                            <a href="https://mp.weixin.qq.com/s/K_S-W2zCjP7dDOhUPgkPBA" target="_blank">Click to view →</a>
+                            <a href="https://mp.weixin.qq.com/s/K_S-W2zCjP7dDOhUPgkPBA" target="_blank" rel="noopener noreferrer">Click to view →</a>
                         </div>
                     </div>
                     <div class="media-card">
                         <img src="yundonghui.jpg" alt="yundonghui">
                         <div class="media-card-content">
                             <div><span class="media-tag">文案</span></div>
-                            <a href="https://mp.weixin.qq.com/s/tKaY-JeuQqyYa9ctAw7Akw" target="_blank">Click to view →</a>
+                            <a href="https://mp.weixin.qq.com/s/tKaY-JeuQqyYa9ctAw7Akw" target="_blank" rel="noopener noreferrer">Click to view →</a>
                         </div>
                     </div>
                     <div class="media-card">
                         <img src="gulei.jpg" alt="gulei">
                         <div class="media-card-content">
                             <div><span class="media-tag">电子地图</span></div>
-                            <a href="https://mp.weixin.qq.com/s/-ngVRnbyIIOqCd2voBrNPA" target="_blank">Click to view →</a>
+                            <a href="https://mp.weixin.qq.com/s/-ngVRnbyIIOqCd2voBrNPA" target="_blank" rel="noopener noreferrer">Click to view →</a>
                         </div>
                     </div>
                 </div>
@@ -561,8 +643,9 @@
 <div class="container" id="contact">
     <h2>Contact</h2>
     <p>Phone: 13718424891</p>
-    <p>WeChat: eastyanlee</p>
     <p>Email: <a href="mailto:dyannlee@163.com">dyannlee@163.com</a></p>
+    <p>GitHub: <a href="https://github.com/EASTYANLEE" target="_blank" rel="noopener noreferrer">github.com/EASTYANLEE</a></p>
+    <p>Beijing · Available for AI product engineering and overseas product internships.</p>
 </div>
 
 <footer>
